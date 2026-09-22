@@ -1,16 +1,16 @@
 {
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
   "Name": "Pear Desktop Stream Deck Plugin",
   "Author": "PixelPulseDev",
   "Description": "Control Pear Desktop Music Player from Stream Deck.",
-  "URL": "https://github.com/PixelPulseDev/pear-desktop-streamdeck",
   "UUID": "com.pear.desktop.streamdeck",
   "Icon": "icons/action-image",
-  "Version": "0.0.1",
+  "Version": "0.0.1.0",
   "Category": "Pear Desktop Stream Deck Plugin",
   "CategoryIcon": "icons/category-icon",
-  "SDKVersion": 2,
+  "SDKVersion": 3,
   "Software": {
-    "MinimumVersion": "6.4"
+    "MinimumVersion": "6.9"
   },
   "OS": [
     {
@@ -22,22 +22,14 @@
       "MinimumVersion": "10"
     }
   ],
+  "CodePath": "bin/plugin.js",
   "Actions": [
     {
       "Icon": "icons/music-play",
       "Name": "Play-Pause",
-      "States": [
-        {
-          "Image": "icons/music-pause",
-          "TitleAlignment": "middle",
-          "FontSize": 16
-        },
-        {
-          "Image": "icons/music-play",
-          "TitleAlignment": "middle",
-          "FontSize": 16
-        }
-      ],
+      "Tooltip": "Plays or Pauses the current song",
+      "UUID": "com.pear.desktop.streamdeck.play-pause",
+      "SupportedInMultiActions": true,
       "Controllers": [
         "Keypad",
         "Encoder"
@@ -51,41 +43,53 @@
           "Push": "Plays or pauses the current song"
         }
       },
-      "SupportedInMultiActions": true,
-      "Tooltip": "Plays or Pauses the current song",
-      "UUID": "com.pear.desktop.streamdeck.play-pause"
+      "States": [
+        {
+          "Image": "icons/music-pause",
+          "TitleAlignment": "middle",
+          "FontSize": 16
+        },
+        {
+          "Image": "icons/music-play",
+          "TitleAlignment": "middle",
+          "FontSize": 16
+        }
+      ]
     },
     {
       "Icon": "icons/music-next",
       "Name": "Next",
+      "Tooltip": "Go to next song",
+      "UUID": "com.pear.desktop.streamdeck.next",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/music-next",
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Go to next song",
-      "UUID": "com.pear.desktop.streamdeck.next"
+      ]
     },
     {
       "Icon": "icons/music-prev",
       "Name": "Prev",
+      "Tooltip": "Go to prev song",
+      "UUID": "com.pear.desktop.streamdeck.prev",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/music-prev",
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Go to prev song",
-      "UUID": "com.pear.desktop.streamdeck.prev"
+      ]
     },
     {
       "Icon": "icons/like-on",
       "Name": "Like",
+      "Tooltip": "Likes current song",
+      "UUID": "com.pear.desktop.streamdeck.like",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/like-on",
@@ -97,14 +101,14 @@
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Likes current song",
-      "UUID": "com.pear.desktop.streamdeck.like"
+      ]
     },
     {
       "Icon": "icons/dislike-on",
       "Name": "Dislike",
+      "Tooltip": "Dislikes current song",
+      "UUID": "com.pear.desktop.streamdeck.dislike",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/dislike-on",
@@ -116,14 +120,14 @@
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Dislikes current song",
-      "UUID": "com.pear.desktop.streamdeck.dislike"
+      ]
     },
     {
       "Icon": "icons/volume-on",
       "Name": "Mute",
+      "Tooltip": "Mutes / unmutes volume",
+      "UUID": "com.pear.desktop.streamdeck.mute",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/volume-on",
@@ -135,35 +139,28 @@
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Mutes / unmutes volume",
-      "UUID": "com.pear.desktop.streamdeck.mute"
+      ]
     },
     {
       "Icon": "icons/volume-down",
       "Name": "Volume Down",
+      "Tooltip": "Volume Down",
+      "UUID": "com.pear.desktop.streamdeck.volume-down",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/volume-down",
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Volume Down",
-      "UUID": "com.pear.desktop.streamdeck.volume-down"
+      ]
     },
     {
       "Icon": "icons/volume-up",
       "Name": "Volume Up",
-      "States": [
-        {
-          "Image": "icons/volume-up",
-          "TitleAlignment": "middle",
-          "FontSize": 16
-        }
-      ],
+      "Tooltip": "Volume Up",
+      "UUID": "com.pear.desktop.streamdeck.volume-up",
+      "SupportedInMultiActions": true,
       "Controllers": [
         "Keypad",
         "Encoder"
@@ -177,13 +174,20 @@
           "Push": "Mute"
         }
       },
-      "SupportedInMultiActions": true,
-      "Tooltip": "Volume Up",
-      "UUID": "com.pear.desktop.streamdeck.volume-up"
+      "States": [
+        {
+          "Image": "icons/volume-up",
+          "TitleAlignment": "middle",
+          "FontSize": 16
+        }
+      ]
     },
     {
       "Icon": "icons/action-image",
       "Name": "Track Info",
+      "Tooltip": "Track Title and Thumbnail",
+      "UUID": "com.pear.desktop.streamdeck.song-info",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/action-image",
@@ -192,50 +196,45 @@
           "FontFamily": "Courier New",
           "FontStyle": "Bold"
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Track Title and Thumbnail",
-      "UUID": "com.pear.desktop.streamdeck.song-info"
+      ]
     },
     {
       "Icon": "icons/shuffle",
       "Name": "Shuffle",
+      "Tooltip": "Shuffle",
+      "UUID": "com.pear.desktop.streamdeck.shuffle",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/shuffle"
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Shuffle",
-      "UUID": "com.pear.desktop.streamdeck.shuffle"
+      ]
     },
     {
       "Icon": "icons/repeat",
       "Name": "Repeat",
+      "Tooltip": "Repeat",
+      "UUID": "com.pear.desktop.streamdeck.repeat",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/repeat"
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Repeat",
-      "UUID": "com.pear.desktop.streamdeck.repeat"
+      ]
     },
     {
       "Icon": "icons/music-play",
       "Name": "Play Playlist",
+      "Tooltip": "Play a selected playlist",
+      "UUID": "com.pear.desktop.streamdeck.play-playlist",
+      "SupportedInMultiActions": true,
       "States": [
         {
           "Image": "icons/music-play",
           "TitleAlignment": "middle",
           "FontSize": 16
         }
-      ],
-      "SupportedInMultiActions": true,
-      "Tooltip": "Play a selected playlist",
-      "UUID": "com.pear.desktop.streamdeck.play-playlist"
+      ]
     }
-  ],
-  "CodePath": "action.html",
-  "PropertyInspectorPath": "property-inspector.html"
+  ]
 }
