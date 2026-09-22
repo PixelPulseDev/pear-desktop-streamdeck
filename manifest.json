@@ -5,7 +5,7 @@
   "Description": "Control Pear Desktop Music Player from Stream Deck.",
   "UUID": "com.pear.desktop.streamdeck",
   "Icon": "icons/action-image",
-  "Version": "0.0.1.0",
+  "Version": "1.0.0.0",
   "Category": "Pear Desktop Stream Deck Plugin",
   "CategoryIcon": "icons/category-icon",
   "SDKVersion": 3,
